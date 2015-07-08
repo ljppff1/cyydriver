@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include
+        layout="@layout/every_action_bar2" />
+    
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.92"
+        android:background="@color/bg_gary"
+        android:paddingTop="8dp" >
+      
+            <!-- 选择主控件 -->
+        <LinearLayout
+            android:id="@+id/mRlMain1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/green" />
+           <include 
+               layout="@layout/every_bottom_bar"
+               />
+            
+        </LinearLayout>
+            
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/mRLMain2"
+            android:background="@drawable/task_background"
+            android:layout_above="@id/mRlMain1"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
+                <TextView 
+                  android:layout_width="0dp"   
+                  android:layout_weight="1"
+                  android:layout_height="wrap_content"
+                  android:text="现场救援"
+                  android:singleLine="true"
+                    />
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/up_button"
+                    android:text="收起"
+                    android:id="@+id/mTVBackReturn"
+                    android:paddingLeft="25dp" />
+            </LinearLayout>
+            
+                  <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_height="0dp" >
+               <RelativeLayout
+                   android:layout_width="fill_parent"
+                   android:layout_height="fill_parent" 
+                   android:gravity="center_vertical"
+                   >
+                   <LinearLayout
+                       android:id="@+id/linearLayout1"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:orientation="horizontal" >
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:gravity="center_horizontal"
+                           android:orientation="vertical" >
+                           <RelativeLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content" 
+                               android:id="@+id/mRLcamera"
+                               >
+                               <ImageView
+                                   android:id="@+id/mIVcamera"
+                                   android:layout_width="40dp"
+                                   android:layout_height="40dp"
+                                   android:layout_centerHorizontal="true"
+                                   android:src="@drawable/camera_button" />
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_below="@id/mIVcamera"
+                                   android:layout_centerHorizontal="true"
+                                   android:layout_gravity="clip_horizontal"
+                                   android:text="现场拍照" />
+                           </RelativeLayout>
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:gravity="center_horizontal"
+                           android:orientation="vertical" >
+                           <RelativeLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content" 
+                               android:id="@+id/mRLrecord">
+                               <ImageView
+                                   android:id="@+id/mIVrecord"
+                                   android:layout_width="40dp"
+                                   android:layout_height="40dp"
+                                   android:layout_centerHorizontal="true"
+                                   android:src="@drawable/record_button" />
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_below="@id/mIVrecord"
+                                   android:layout_centerHorizontal="true"
+                                   android:layout_gravity="clip_horizontal"
+                                   android:text="情况记录" />
+                           </RelativeLayout>
+                       </LinearLayout>
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:gravity="center_horizontal"
+                           android:orientation="vertical" >
+                           <RelativeLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/mRLsignature" >
+                               <ImageView
+                                   android:id="@+id/mIVsignature"
+                                   android:layout_width="40dp"
+                                   android:layout_height="40dp"
+                                   android:layout_centerHorizontal="true"
+                                   android:src="@drawable/signature_button" />
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_below="@id/mIVsignature"
+                                   android:layout_centerHorizontal="true"
+                                   android:layout_gravity="clip_horizontal"
+                                   android:text="现场拍照" />
+                           </RelativeLayout>
+                       </LinearLayout>
+                   </LinearLayout>
+                   
+                   <ProgressBar  
+                      android:id="@+id/mPBexecute" 
+                      android:layout_below="@id/linearLayout1"
+                       android:layout_width="fill_parent"  
+                       android:layout_height="5dp"  
+                       style="?android:attr/progressBarStyleHorizontal" 
+                       android:max="100" 
+                     android:progress="0" 
+                     android:secondaryProgress="33" 
+                       /> 
+                      <LinearLayout
+                       android:id="@+id/linearLayout2"
+                       android:layout_below="@id/mPBexecute"
+                       android:layout_width="fill_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal" >
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                   android:id="@+id/mIVexecutecamera"
+                                   android:textSize="12dp"
+                                   android:gravity="center_horizontal"
+                                   android:text="待拍照" />
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                     android:textSize="12dp"
+                                   android:id="@+id/mIVexecuterecord"
+                                   android:gravity="center_horizontal"
+                                   android:text="待填写" />
+                                                              <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_weight="1"
+                                     android:textSize="12dp"
+                                   android:id="@+id/mIVexecutesignature"
+                                 android:gravity="center_horizontal"
+                                   android:text="待签名" />
+                   </LinearLayout>
+               </RelativeLayout>
+        </LinearLayout>
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                            <TextView
+                 android:layout_width="fill_parent"
+              android:layout_height="1dp"
+        android:background="@color/green" />
+            <!-- 服务类型 -->
+            <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car_service_type"
+                    android:id="@+id/tv_1"
+                    android:textColor="@color/dark_g" />
+                <TextView
+                    android:id="@+id/mTVCarTypeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="平板拖车"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:layout_toRightOf="@id/tv_1"
+                    android:singleLine="true"
+                    android:textColor="@color/dark_y" />
+            </RelativeLayout>
+             <TextView
+                 android:layout_width="fill_parent"
+              android:layout_height="1dp"
+        android:background="@color/green" />
+                <!--车辆信息 -->
+            <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car_information"
+                    android:id="@+id/tv_2"
+                    android:textColor="@color/dark_g" />
+                <TextView
+                    android:id="@+id/mTVCarLicensePlate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="粤B55656 奥迪A8"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:layout_toRightOf="@id/tv_2"
+                    android:singleLine="true"
+                    android:textColor="@color/dark_y" />
+            </RelativeLayout>
+             <TextView
+                 android:layout_width="fill_parent"
+              android:layout_height="1dp"
+        android:background="@color/green" />
+                           <!--保险公司-->
+            <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car_insurance_company"
+                    android:id="@+id/tv_3"
+                    android:textColor="@color/dark_g" />
+
+                <TextView
+                    android:id="@+id/mTVInsuranceCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="太平洋保险公司"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:layout_toRightOf="@id/tv_3"
+                    android:singleLine="true"
+                    android:textColor="@color/dark_y" />
+                           
+            </RelativeLayout>
+             <TextView
+                 android:layout_width="fill_parent"
+              android:layout_height="1dp"
+        android:background="@color/green" />
+                           <!--联系车主 -->
+            <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="29dp"
+                >
+                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/car_telephone"
+                    android:id="@+id/tv_4"
+                    android:textColor="@color/dark_g" />
+
+                <TextView
+                    android:id="@+id/mTVPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卢佩13255584699"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:layout_toRightOf="@id/tv_4"
+                    android:drawableLeft="@drawable/phone"
+                    android:singleLine="true"
+                    android:textColor="@color/green" />
+            </RelativeLayout>
+          </LinearLayout>
+        </LinearLayout>        
+    </RelativeLayout>
+    </LinearLayout>    
+    

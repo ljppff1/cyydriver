@@ -1,0 +1,20 @@
+package cn.com.cyy.server2.finals;
+
+/**
+ * JSON的Action名称的常量类
+ * @author hurenji
+ *
+ */
+public class SocketActionFinals {
+
+	/**
+	 * @param ACTION_RESPONSE_INIT Socket初始化是否成功
+	 */
+	public static final String ACTION_RESPONSE_INIT = "ResponseInit";
+	
+	public static final String ACTION_TASK_INFO = "responseNewAssignment";
+	
+	public static final String ACTION_SCREEN_OFF = "responseScreenOff";
+
+	public static final String ACTION_CATCH_ASSIGNMENT ="catchAssignmentResult";
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:background="@color/s_orange" >
+
+            <TextView
+                android:id="@+id/mTvTestMainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="平板拖车请求"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/mTvTestMainRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/mTvTestMainTitle"
+                android:layout_marginTop="8dp"
+                android:text="距您1.5公里"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.07" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.73"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <!-- 车主姓名 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/car_owner_name"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="程女士"
+                    android:singleLine="true"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+            <!-- 车主联系方式 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/car_owner_phone"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="13522556454"
+                    android:singleLine="true"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+            <!-- 车主车牌号码 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/car_number"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainCarNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="粤B52136"
+                    android:singleLine="true"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+            <!-- 车主车辆型号 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/car_model"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainCarModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C1"
+                    android:singleLine="true"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+            <!-- 保险公司 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/company"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中国人寿"
+                    android:singleLine="true"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+
+            <!-- 其他事项 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/other_matter"
+                    android:textColor="@android:color/tertiary_text_dark" />
+
+                <TextView
+                    android:id="@+id/mTvTestMainOtherMatter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:text="还是讴歌环境规划拉钩上吊好几个 十分棘手非金属矿 就好经好看"
+                    android:textColor="@android:color/tertiary_text_dark" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <SlidingDrawer
+        android:id="@+id/mSdTestMain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:content="@+id/mSdTestMainContent"
+        android:handle="@+id/mSdTestMainHandle"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@id/mSdTestMainHandle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_graybro_whiterbg_oval"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="上拉打开地图"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@id/mSdTestMainContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true" />
+
+            <Button
+                android:id="@+id/mBtTestMaiPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="55dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/d_orange"
+                android:padding="5dp"
+                android:text="定位"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+    </SlidingDrawer>
+
+</RelativeLayout>

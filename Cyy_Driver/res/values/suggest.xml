@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="open_animation_icon">开机动画的图标</string>
+    <string name="cyy_server_app">车友援服务端APP</string>
+    <string name="please_input_phone">请输入手机号码</string>
+    <string name="letter_and_number">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="entry">登录</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="at_once_register">马上注册</string>
+    <string name="register">注册</string>
+    <string name="get_code">获取验证码</string>
+    <string name="phone_no">手机号码</string>
+    <string name="set_password_gt_six">设置6&#8211;16位之间的密码</string>
+    <string name="code">验证码</string>
+    <string name="next">下一步</string>
+    <string name="actual_name">真实姓名</string>
+    <string name="boy">男</string>
+    <string name="girl">女</string>
+    <string name="select_firm">选择公司</string>
+    <string name="select_server">选择服务项目</string>
+    <string name="select_serverid">选择服务</string>
+    <string name="id_card_front_image">身份证正面照片</string>
+    <string name="up_id_card_image">上传身份证照片</string>
+    <string name="submit_audit">提交审核</string>
+    <string name="application_hint">应用提示</string>
+    <string name="open_gps_message">为了更好的提供服务,请打开GPS定位功能。\n是否打开GPS定位功能?</string>
+    <string name="no_hint">不再提示</string>
+    <string name="open_gps">打开GPS</string>
+    <string name="later_on_open">稍后打开</string>
+    <string name="my_setting">个人设置</string>
+    <string name="hint_sound_setting">提示音设置</string>
+    <string name="alter_password">修改密码</string>
+    <string name="system_setting">系统设置</string>
+    <string name="check_up">检查更新</string>
+    <string name="auto_open_duty">自动弹出任务</string>
+    <string name="wifi_auto_up_data">WiFi下自动上传资料</string>
+    <string name="idea_back">意见反馈</string>
+    <string name="other">其他</string>
+    <string name="about_cyy">关于车友援</string>
+    <string name="car_owner_name">车主称呼 :</string>
+    <string name="car_owner_phone">联系方式 :</string>
+    <string name="car_number">车牌号码 :</string>
+    <string name="car_model">车辆型号 :</string>
+    <string name="company">保险公司 :</string>
+    <string name="other_matter">其他事项 :</string>
+    <string name="my_address">我的位置:</string>
+    <string name="geting">获dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd取中...</string>
+
+</resources>

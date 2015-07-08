@@ -1,0 +1,64 @@
+10
+
+dir
+203
+svn://svn.cyy928.com/cyy/Android/Cyy_Driver/res
+svn://svn.cyy928.com/cyy
+
+
+
+2014-11-10T10:00:07.128711Z
+196
+RenJi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d1c97ab0-b5aa-484d-99bd-5e3f2e809bdf
+
+color
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+drawable-xxhdpi
+dir
+
+layout
+dir
+
+raw
+dir
+
+values
+dir
+
+values-v11
+dir
+
+values-v14
+dir
+

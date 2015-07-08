@@ -1,0 +1,98 @@
+package cn.com.cyy.server2.net;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cn.com.cyy.server2.service.SocketNetService;
+
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.DistanceUtil;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+
+/**
+ * 创建Socket访问的JSON
+ * 
+ * @author hurenji
+ */
+public class CreateSocketJson {
+
+	private static JSONObject jsonObject;
+	private static SharedPreferences userInfo;
+
+	// 将Json拼接成字符串
+	private static String strJson(JSONObject json) {
+		return "app" + jsonObject.toString() + "\n";
+	}
+
+	// 登录成功后连接Socket
+	public static String LoginInfoJson(Context context) {
+
+		userInfo = context.getSharedPreferences("userInfo",
+				Context.MODE_PRIVATE);
+		jsonObject = new JSONObject();
+		try {
+			jsonObject = new JSONObject();
+			jsonObject.put("uid", userInfo.getString("uId", ""));
+			jsonObject.put("company_id", userInfo.getString("companyId", ""));
+			jsonObject.put("action", userInfo.getString("action", ""));
+			jsonObject.put("name", userInfo.getString("name", ""));
+			jsonObject.put("mobile", userInfo.getString("mobile", ""));
+			jsonObject
+					.put("serviceName", userInfo.getString("serviceName", ""));
+			jsonObject.put("serviceTypeID",
+					userInfo.getString("serviceTypeID", ""));
+			jsonObject.put("longitude",
+					userInfo.getString("loginLongitude", "116.0000"));
+			jsonObject.put("latitude", userInfo.getString("loginLatitude", "39.88888"));
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return strJson(jsonObject);
+
+	}
+	
+	// 登录后发Socket
+	public static String OffLineJson(Context context) {
+		userInfo = context.getSharedPreferences("userInfo",
+				Context.MODE_PRIVATE);
+		jsonObject = new JSONObject();
+		try {
+			jsonObject = new JSONObject();
+			jsonObject.put("uid", userInfo.getString("uId", ""));
+			jsonObject.put("status","0");
+			jsonObject.put("company_id",userInfo.getString("companyId", ""));
+			jsonObject.put("action","appChangeStatus");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return strJson(jsonObject);
+
+	}
+
+	// 登录成功后连接Socket
+	public static String sendRequestGrab(Context context,String assignment_id) {
+
+		userInfo = context.getSharedPreferences("userInfo",
+				Context.MODE_PRIVATE);
+		jsonObject = new JSONObject();
+		try {
+			jsonObject = new JSONObject();
+			jsonObject.put("uid", userInfo.getString("uId", ""));
+			jsonObject.put("action", "catchAssignment");
+			jsonObject.put("assignment_id",assignment_id);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return strJson(jsonObject);
+
+	}
+
+	
+}

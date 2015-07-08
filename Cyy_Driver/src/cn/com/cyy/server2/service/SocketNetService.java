@@ -1,0 +1,213 @@
+package cn.com.cyy.server2.service;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.geocode.GeoCodeResult;
+import com.baidu.mapapi.search.geocode.GeoCoder;
+import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
+import com.baidu.mapapi.utils.DistanceUtil;
+
+import cn.com.cyy.server2.net.CreateSocketJson;
+import cn.com.cyy.server2.net.SocketIOWriterNet;
+import cn.com.cyy.server2.ui.MainActivity;
+import cn.com.cyy.server2.util.Content;
+import cn.com.cyy.server2.util.NetListenerUtil;
+import cn.com.cyy.server2.util.UpUserAddress;
+
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import android.widget.Toast;
+
+public class SocketNetService extends Service{
+
+	private final String TAG = "SocketNetService";
+
+	public static Thread NetThread;
+	public static Socket socket;
+	private InetAddress address;
+	public static boolean isFristConn = true;
+	public static BufferedWriter bw = null;
+	public static BufferedReader br = null;
+	public static SocketIOWriterNet writerThread = null;
+	public static UpUserAddress upUserAddress = null;
+	private LocationClient mLocClient;
+	private double Latitude;
+	private double Longitude;
+    private boolean flag =false;
+
+	private Handler handler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+			switch (msg.what) {
+			case 200:
+				Toast.makeText(getApplication(), "网络连接成功 ", Toast.LENGTH_SHORT)
+						.show();
+			//	 new Thread(new WriterThread(socket)).start();
+				
+				break;
+			case 404:
+				Toast.makeText(getApplication(), "网络被断开", Toast.LENGTH_SHORT)
+						.show();
+				NetListenerUtil.clostAllNet(SocketNetService.this);
+				//NetThread = null;
+				//socket = null;
+				break;
+			}
+
+		}
+
+	};
+
+
+	private String ip;
+
+
+
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		return null;
+	}
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		
+		
+		
+	}
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		if(!Content.IS_CANCEL_LOGIN_NET&&!Content.IS_OFF_LINE_NET){
+			Log.i("MYMYMY", "!Content.IS_CANCEL_LOGIN_NET&&!Content.IS_OFF_LINE_NET");
+		// 如果Socket为空
+			Log.i("MYMYMY", NetThread+":"+socket);
+		if (NetThread == null || socket == null) {
+			Log.i("MYMYMY", "NetThread == null || socket == null");
+
+			NetThread = new Thread(new Runnable() {
+				@Override
+				public void run() {
+					Log.i("MYMYMY","connSocket");
+
+					connSocket();
+					
+				}
+			});
+			NetThread.start();
+		}
+		}
+		return super.onStartCommand(intent, flags, startId);
+		
+	}
+
+	private void connSocket() {
+		if (socket == null) {
+			try {
+			    try
+			    {
+			   	    ip=java.net.InetAddress.getByName(Content.SOCKET).getHostAddress();
+			    }	
+			   catch(UnknownHostException e)
+			     {
+			     }
+			    address = InetAddress.getByName(ip);
+				socket = new Socket(address, 9200);
+				socket.setSoTimeout(5000);
+				//if(isFristConn){
+					System.out.println("来了");
+					//isFristConn = false;
+					bw = new BufferedWriter(new OutputStreamWriter(
+							socket.getOutputStream()));
+					br = new BufferedReader(new InputStreamReader(
+							socket.getInputStream()));
+					writerThread = new SocketIOWriterNet(SocketNetService.this);
+					String str = CreateSocketJson
+							.LoginInfoJson(SocketNetService.this);
+					try{
+					SocketNetService.writerThread.start();
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+					if(SocketNetService.writerThread!=null){
+					// 写
+					SocketNetService.writerThread.SetStr(str);
+					
+					//读
+					SocketNetService.writerThread.getStr();
+					}
+					   boolean isLogin = getSharedPreferences("isBoolean",MODE_PRIVATE).getBoolean("is_login", false);
+
+				if( Content.IS_CONNECT_NET&&isLogin&&!Content.IS_OFF_LINE_NET){
+					Log.i("MYMYMY","msgs.what = 200");
+
+					 Message msgs = Message.obtain();
+				msgs.what = 200;
+				handler.sendMessage(msgs);
+				System.out.println("来了连接");}else{
+					 Message msgs1 = Message.obtain();
+					msgs1.what = 404;
+					handler.sendMessage(msgs1);
+				}
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+				 Message msgs2 = Message.obtain();
+				msgs2.what = 404;
+				Log.i("MYMYMY","msgs.what = 404");
+
+				handler.sendMessage(msgs2);
+			} catch (IOException e) {
+				e.printStackTrace();
+				 Message msgs3 = Message.obtain();
+				msgs3.what = 404;
+				Log.i("MYMYMY","msgs.what = 404");
+
+				handler.sendMessage(msgs3);
+			}
+		}
+	}
+	
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if(socket!=null){
+		socket = null;
+		}
+		if(NetThread!=null){
+		NetThread = null;
+		}
+		NetListenerUtil.clostAllNet(SocketNetService.this);
+		
+		Toast.makeText(getApplication(), "服务被结束 ", Toast.LENGTH_SHORT).show();
+	}
+
+
+}

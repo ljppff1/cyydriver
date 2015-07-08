@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gary"
+    android:id="@+id/mLLLogin1"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/navigation"
+       >
+        <TextView
+        android:id="@+id/mTvActionBarCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+        android:text="登录"
+        android:textColor="@color/s_orange"
+        android:textSize="18sp" />
+        
+    </RelativeLayout>
+    
+    <cn.com.cyy.server2.view.MyScrollView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        >
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.17" />
+
+        <RelativeLayout
+            android:paddingTop="15dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.66" >
+
+            <EditText
+                android:id="@+id/mEtLoginAccout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/shape_graybro_whiterbg_oval"
+                android:hint="@string/please_input_phone"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:padding="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/mEtLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mEtLoginAccout"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/shape_graybro_whiterbg_oval"
+                android:digits="@string/letter_and_number"
+                android:hint="@string/please_input_password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:maxLength="16"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/mBtLoginEntry"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_below="@id/mEtLoginPassword"
+                android:layout_marginBottom="12dp"
+                android:background="@color/s_orange"
+                android:gravity="center"
+                android:text="@string/entry"
+                android:textColor="@color/select_whitertext_to_dorangetext"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/mTvLoginForgetPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/mBtLoginEntry"
+                android:text="@string/forget_password"
+                android:textColor="@color/select_whitertext_to_sorangetext"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/mBtLoginRegister"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/select_whiterbg_to_sorangebg"
+                android:text="@string/at_once_register"
+                android:textColor="@color/select_sorangetext_to_whitertext"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.17" />
+    </LinearLayout>
+    </LinearLayout>
+</cn.com.cyy.server2.view.MyScrollView>
+</LinearLayout>

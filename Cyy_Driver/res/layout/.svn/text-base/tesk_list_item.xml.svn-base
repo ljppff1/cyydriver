@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主界面的列表View -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="15dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp" >
+
+        <TextView
+            android:id="@+id/mTvTaskItemRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/mTvTaskItemServeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mTvTaskItemRange"
+            android:textColor="@android:color/black" />
+        
+        <TextView 
+            android:id="@+id/mTvTaskItemId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/mTvTaskItemServeType"
+            android:textColor="@android:color/black"
+            />
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/d_gary"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="10dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.67" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/mIvIconGPS"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/gps" />
+
+                <TextView
+                    android:id="@+id/mTvTaskItemAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/mIvIconGPS"
+                    android:maxLines="3"
+                    android:textColor="@android:color/black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp" >
+
+                <ImageView
+                    android:id="@+id/mIvIconPhone"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/phone" />
+
+                <TextView
+                    android:id="@+id/mTvTaskItemPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/shape_greenbro_skybluebg_oval"
+                    android:layout_toRightOf="@id/mIvIconPhone"
+                    android:maxLines="3"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/green" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15" />
+
+        <RelativeLayout
+            android:id="@+id/mRlTaskItemRob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.43"
+            android:background="@drawable/shape_sgreenbro_sgreenbg_oval"
+            android:gravity="center"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/mTvText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:text="抢"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+                        <TextView
+                android:id="@+id/mTvTaskItemTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvText1"
+                android:layout_centerHorizontal="true"
+                android:text="剩余时间："
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+            
+
+            <cn.com.cyy.server2.timescale.CustomDigitalClock
+                android:gravity="left|center_vertical"
+                android:id="@+id/mTvTaskItemTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvTaskItemTime1"
+                android:layout_centerHorizontal="true"
+            android:text="00:00:01"
+            android:textSize="12sp"
+                android:textColor="@android:color/white"
+                 />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+       android:background="@color/bg_gary"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/every_action_bar2" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.92"
+        android:background="@color/bg_gary"
+        android:paddingTop="8dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/mLlMainSomeInfo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.13"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="0.04"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/mTvMainHelpNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="接单  5  次"
+                        android:textColor="@android:color/tab_indicator_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/mTvMainOnLineNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="12dp"
+                        android:text="在线 10 小时"
+                        android:textColor="@android:color/tab_indicator_text"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.1"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="@string/my_address"
+                        android:textColor="@android:color/tab_indicator_text" />
+
+                    <TextView
+                        android:id="@+id/mTvMainMyAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="@string/geting"
+                        android:textColor="@android:color/tab_indicator_text" />
+
+                    <ImageView
+                        android:id="@+id/mIVgps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.15"
+                        android:src="@drawable/gps"
+                          android:paddingRight="0dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/mTVSpread"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:paddingRight="0dp"
+                        android:text="收起" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/mRLlistview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.92"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:visibility="gone" >
+
+                <ListView
+                    android:id="@+id/mLvMainMsgs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="115dp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="10dp" >
+                </ListView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mRLmapview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="155dp" >
+
+                    <com.baidu.mapapi.map.MapView
+                        android:id="@+id/bmapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true" />
+
+                    <Button
+                        android:id="@+id/mBtTestMaiPosition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:background="@color/d_orange"
+                        android:padding="2dp"
+                        android:text="定位"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mRLmapview2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" >
+
+                <ImageView
+                    android:id="@+id/mIvMainIcon"
+                    android:layout_width="140dp"
+                    android:layout_height="182dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/background" />
+            </RelativeLayout>
+            
+            
+            
+            </LinearLayout>
+
+        <!-- 选择主控件 -->
+
+        <LinearLayout
+            android:id="@+id/mRlMain1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/green" />
+
+            <include layout="@layout/every_bottom_bar" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

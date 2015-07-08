@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="s_orange">#EE7701</color>
+    <color name="d_orange">#FDA145</color>
+    <color name="green">#52b02b</color>
+    <color name="sky_blue">#E4EFF9</color>
+    <color name="d_gary">#E3E3E3</color>
+    <color name="gary">#7F7C7C</color>
+    <color name="bg_gary">#d7dad8</color>
+    <color name="s_green">#52B02B</color>
+    <color name="dark_g">#777B88</color>
+    <color name="dark_y">#080809</color>
+</resources>

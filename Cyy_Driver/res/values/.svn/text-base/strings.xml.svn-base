@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Cyy_Driver</string>
+
+    <string name="cancel">关闭</string>
+    <string name="car_service_type">服务类型</string>
+    <string name="car_information">车辆信息</string>
+    <string name="car_insurance_company">保险公司</string>
+    <string name="car_telephone">联系车主</string>
+    <string name="order_makesure">确认接单</string>
+    <string name="outline">离线</string>
+    <string name="app_name_title">车有援服务</string>
+    <string name="dorescue">执行救援</string>
+    <string name="stop">中止</string>
+    <string name="app_name_title_go">请赶往现场</string>
+    
+</resources>

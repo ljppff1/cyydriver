@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    
+             <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/navigation"
+       >
+        <TextView
+        android:id="@+id/mTvActionBarCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+        android:text="注册"
+        android:textColor="@color/s_orange"
+        android:textSize="18sp" />
+    </RelativeLayout>
+    
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:background="@android:color/white"
+  >
+    <cn.com.cyy.server2.view.MyScrollView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+      android:paddingTop="20dp" 
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.09"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.06" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.82" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:src="@drawable/register3" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.06" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.09"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.06" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.70"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:textSize="13dp"
+                    android:text="请清晰的拍摄您的身份证正正面，有助于快速通过审核"
+                    android:textColor="@color/gary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout 
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.55"
+                        android:orientation="horizontal"
+                        >
+                                                            <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.15" />
+                        
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/shape_graybro_whiterbg"
+                        android:padding="3dp" >
+                        
+                        <ImageView
+                            android:id="@+id/mIvRegisterIdCardImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/id_card_front_image"
+                            android:src="@drawable/icon" />
+
+                    </RelativeLayout>
+                                                        <View
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.15" />
+                    
+                </LinearLayout>
+                    
+                    
+                    <CheckBox 
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mCBRegister"
+                        android:text="我已阅读并同意 车友援注册协议 "
+                        android:textColor="@color/bg_gary"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.53"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/mBtRegisterUpImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:background="@drawable/select_dorangebg_to_sorangebg"
+                            android:text="拍摄"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" 
+                            android:layout_marginBottom="20dp"/>
+                        
+                        <Button
+                            android:id="@+id/mBtRegisterSubmit"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:background="@drawable/select_dorangebg_to_sorangebg"
+                            android:text="@string/submit_audit"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.06" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</cn.com.cyy.server2.view.MyScrollView>
+
+</RelativeLayout>
+</LinearLayout>

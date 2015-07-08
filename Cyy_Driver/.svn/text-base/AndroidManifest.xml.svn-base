@@ -1,0 +1,155 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.cyy.server2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:allowBackup="true"
+        android:name="cn.com.cyy.server2.util.CyyApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MySharing" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+          android:value="8TNobnlcwvcFaTm0h8nlt9k3"
+  />
+          <!--   android:value="wmUMVhUdG4Ew0FE5nYlzeg3G" -->
+                  <!--   android:value="wmUMVhUdG4Ew0FE5nYlzeg3G" -->
+        
+        <!-- 启动应用的Activity -->
+        <activity
+            android:name="cn.com.cyy.server2.ui.MainActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 登录界面的Activity -->
+        <activity
+            android:name="cn.com.cyy.server2.ui.LoginActivity"
+              android:launchMode="singleTask"
+              android:windowSoftInputMode="adjustPan"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- 注册界面的Activity -->
+       
+            
+        <activity
+            android:name="cn.com.cyy.server2.ui.RegisterActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <!-- spend界面 -->
+        <activity
+             android:name="cn.com.cyy.server2.ui.SpendActivity"
+            ></activity>
+        
+        <activity
+            android:name="cn.com.cyy.server2.ui.TestMainActivity"
+          />
+        <activity 
+            android:name="cn.com.cyy.server2.ui.ConfirmOrdersActivity"
+            ></activity>
+        <activity 
+            android:name="cn.com.cyy.server2.ui.RescueActivity"
+            ></activity>
+        <activity 
+            android:name="cn.com.cyy.server2.ui.ExecuteOrderActivity"
+            ></activity>
+        <activity 
+            android:name="cn.com.cyy.server2.ui.CameraActivity"
+            ></activity>
+        <activity 
+            android:name="cn.com.cyy.server2.ui.RegFirstActivity"
+          
+            ></activity>
+        <activity 
+            android:name="cn.com.cyy.server2.ui.RegSecondActivity"
+           
+            ></activity>
+                <activity 
+            android:name="cn.com.cyy.server2.ui.RegThirdActivity"
+            ></activity>
+                <activity 
+                    android:name="cn.com.cyy.server2.ui.NoteDetailActivity"
+                    android:windowSoftInputMode="adjustPan"
+                    ></activity>
+               <activity 
+                   android:name="cn.com.cyy.server2.ui.NoteActivity"
+                   ></activity>
+               <activity 
+                   android:name="cn.com.cyy.server2.ui.HandWritingActivity"
+                   ></activity>
+        
+        <!-- 百度地图的Service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <!-- 设置的Activity -->
+        <activity
+            android:name="cn.com.cyy.server2.ui.SettingActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+        <!-- Socket长连接的Service -->
+        <service android:name="cn.com.cyy.server2.service.SocketNetService" 
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="scyy.service.SocketNetService" />
+            </intent-filter>
+        </service>
+        
+<!--         监听网络的receiver
+           <receiver android:name="cn.com.cyy.server2.receiver.ConnectReceiver">  
+            <intent-filter>  
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>  
+            </intent-filter>  
+        </receiver>  
+ -->        
+        <!-- 一个全局的Socket连通的广播 -->
+        <receiver android:name="cn.com.cyy.server2.receiver.OperConnReceiver" >
+            <intent-filter>
+                <action android:name="cn.com.cyy.server2.receiver.OperConnReceiver" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
